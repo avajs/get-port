@@ -1,0 +1,29 @@
+name: Install and test @ava/cooperate
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    paths-ignore:
+    - '*.md'
+jobs:
+  nodejs:
+    name: Node.js
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [^12.17.0, ^14.0.0]
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install --no-audit
+      - run: npm test
+      - uses: codecov/codecov-action@v1
+        with:
+          file: coverage/lcov.info
+          name: ${{ matrix.node-version }}

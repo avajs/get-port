@@ -1,0 +1,41 @@
+{
+	"name": "@ava/get-port",
+	"version": "0.0.0",
+	"description": "Cooperative get-port implementation",
+	"engines": {
+		"node": ">=12.17.0 <13 || >=14.0.0"
+	},
+	"files": [
+		"dist/source"
+	],
+	"main": "dist/source",
+	"types": "dist/source/index.d.ts",
+	"scripts": {
+		"build": "del-cli dist && tsc",
+		"prepare": "npm run -s build",
+		"test": "xo && tsd && c8 ava"
+	},
+	"keywords": [
+		"ava",
+		"lock",
+		"mutex",
+		"plugin",
+		"test"
+	],
+	"author": "Mark Wubben (https://novemberborn.net)",
+	"repository": "avajs/get-port",
+	"license": "MIT",
+	"devDependencies": {
+		"@ava/typescript": "^1.1.1",
+		"@sindresorhus/tsconfig": "^0.7.0",
+		"ava": "github:avajs/ava#shared-worker-plugins",
+		"c8": "^7.3.0",
+		"del-cli": "^3.0.1",
+		"tsd": "^0.13.1",
+		"typescript": "^4.0.2",
+		"xo": "^0.33.1"
+	},
+	"peerDependencies": {
+		"ava": "*"
+	}
+}
