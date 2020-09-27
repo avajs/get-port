@@ -28,7 +28,7 @@
 	"devDependencies": {
 		"@ava/typescript": "^1.1.1",
 		"@sindresorhus/tsconfig": "^0.7.0",
-		"ava": "github:avajs/ava#shared-worker-plugins",
+		"ava": "^3.13.0",
 		"c8": "^7.3.0",
 		"del-cli": "^3.0.1",
 		"tsd": "^0.13.1",
@@ -36,7 +36,7 @@
 		"xo": "^0.33.1"
 	},
 	"dependencies": {
-		"@ava/cooperate": "github:avajs/cooperate#reserve"
+		"@ava/cooperate": "^0.1.0"
 	},
 	"peerDependencies": {
 		"ava": "*"
