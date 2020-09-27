@@ -1,0 +1,15 @@
+{
+	"all": true,
+	"include": [
+		"{dist/source,source}/**/*.{js,ts}"
+	],
+	"exclude": [
+		"{coverage,dist/test}/**",
+		"dist/**/*.d.ts",
+		"*.config.js"
+	],
+	"reporter": [
+		"html",
+		"lcov"
+	]
+}
