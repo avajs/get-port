@@ -1,6 +1,6 @@
 # @ava/get-port
 
-Experimental AVA plugin which works like [`get-port`](https://github.com/sindresorhus/get-port), but ensures the port is locked across all test files.
+AVA 4 plugin which works like [`get-port`](https://github.com/sindresorhus/get-port), but ensures the port is locked across all test files.
 
 Install this as a development dependency alongside AVA itself:
 
@@ -8,22 +8,10 @@ Install this as a development dependency alongside AVA itself:
 npm install --save-dev @ava/get-port
 ```
 
-Then make sure you've enabled the shared workers experiment:
-
-`ava.config.js`:
-
-```js
-export default {
-  nonSemVerExperiments: {
-    sharedWorkers: true
-  }
-};
-```
-
 ## Usage
 
 ```ts
-const {default: getPort} = require('@ava/get-port');
+import getPort from '@ava/get-port';
 
 test.before('get port', async t => {
   t.context.port = await getPort();

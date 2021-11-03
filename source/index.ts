@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import net from 'node:net';
 import {SharedContext} from '@ava/cooperate';
 
-const context = new SharedContext(__filename);
+const context = new SharedContext(import.meta.url);
 
 // Reserve a range of 16 addresses at a random offset.
 const reserveRange = async (): Promise<number[]> => {

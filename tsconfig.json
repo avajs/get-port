@@ -1,12 +1,7 @@
 {
-	"extends": "@sindresorhus/tsconfig",
+	"extends": "@sindresorhus/tsconfig/tsconfig.json",
 	"compilerOptions": {
 		"outDir": "dist",
-		"target": "es2019", // Node.js 12
-		"lib": [
-			"es2019"
-		],
-		"esModuleInterop": true,
 		"sourceMap": true
 	},
 	"include": [

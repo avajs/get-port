@@ -1,7 +1,7 @@
 import net from 'node:net';
 import {promisify} from 'node:util';
 import test from 'ava';
-import getPort from '../source';
+import getPort from '../source/index.js';
 
 test('gets up to 16 ports in a block', async t => {
 	const first = await getPort();
@@ -28,8 +28,9 @@ test('port can be bound', async t => {
 	t.teardown(() => server.close());
 
 	const port = await getPort();
-	await promisify(server.listen.bind(server))(port);
-	t.is((server.address() as any).port, port);
+	const listen: (port: number) => Promise<void> = promisify(server.listen.bind(server));
+	await listen(port);
+	t.is((server.address() as net.AddressInfo).port, port);
 });
 
 test('can get ports simultaneously', async t => {
