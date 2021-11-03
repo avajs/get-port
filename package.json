@@ -31,6 +31,7 @@
 	"devDependencies": {
 		"@ava/typescript": "^3.0.0",
 		"@sindresorhus/tsconfig": "^2.0.0",
+		"@types/node": "^16.11.6",
 		"ava": "4.0.0-rc.1",
 		"c8": "^7.10.0",
 		"del-cli": "^4.0.1",
