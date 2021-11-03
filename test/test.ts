@@ -1,5 +1,5 @@
-import net from 'net';
-import {promisify} from 'util';
+import net from 'node:net';
+import {promisify} from 'node:util';
 import test from 'ava';
 import getPort from '../source';
 
