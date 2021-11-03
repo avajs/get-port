@@ -1,6 +1,6 @@
 {
 	"name": "@ava/get-port",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "Cooperative get-port implementation",
 	"engines": {
 		"node": ">=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=17"
