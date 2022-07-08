@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Cooperative get-port implementation",
 	"engines": {
-		"node": ">=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=17"
+		"node": ">=14.19 <15 || >=16.15 <17 || >=18"
 	},
 	"files": [
 		"dist/source"
