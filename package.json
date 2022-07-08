@@ -44,5 +44,8 @@
 	},
 	"peerDependencies": {
 		"ava": "*"
+	},
+	"volta": {
+		"node": "18.5.0"
 	}
 }
