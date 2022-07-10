@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import net from 'node:net';
 import os from 'node:os';
+import util from 'node:util';
 import {SharedContext} from '@ava/cooperate';
 
 const context = new SharedContext(import.meta.url);
@@ -11,14 +12,15 @@ const localHosts = new Set([
 	...Object.values(os.networkInterfaces()).flatMap(interfaces => interfaces?.map(info => info.address)),
 ]);
 
+const minPort = 1024;
+const maxPort = 65_535;
+const size = 16;
+const randomInt = util.promisify(crypto.randomInt) as (max: number) => Promise<number>;
+
 // Reserve a range of 16 addresses at a random offset.
 const reserveRange = async (): Promise<number[]> => {
-	let from: number;
-	do {
-		from = crypto.randomBytes(2).readUInt16BE(0);
-	} while (from < 1024 || from > 65_520);
-
-	const range = Array.from({length: 16}, (_, index) => from + index);
+	const from = await randomInt(maxPort - minPort - size + 1);
+	const range = Array.from({length: size}, (_, index) => minPort + from + index);
 	return context.reserve(...range);
 };
 
